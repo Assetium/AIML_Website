@@ -42,9 +42,7 @@ yarn-error.log*
 next-env.d.ts
 
 # docker
-dockerfile
-docker
+docker/
 docker-compose.yml
 *.dockerfile
 .dockerignore
-/docker/
