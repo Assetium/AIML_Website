@@ -25,7 +25,7 @@ export default function RootLayout({
   return (
     <html lang="en" className="bg-[#F1F1F1]">
       <body className={`${poppins.className} mx-auto max-w-screen-3xl`}>
-        <script defer src="https://analytics.assetium.com/script.js" data-website-id="842f1975-71f8-4f32-b448-68d79e17ca45"></script>
+        <script defer src="https://analytics.assetium.com/script.js" data-website-id="18b418c0-cf0c-4bad-9d1f-79418f0c1c7e"></script>
         <Header />
         <div>{children}</div>
 
