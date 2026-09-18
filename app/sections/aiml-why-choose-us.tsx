@@ -129,19 +129,17 @@ const stats = [
 
 export default function AIMWhyUs() {
   return (
-    <section className="relative bg-[#111110] py-24 px-4 md:px-8 overflow-hidden">
-      {/* Background grain */}
+    <section className="relative overflow-hidden bg-[#f4f1eb] py-24 px-4 text-[#1a1919] md:px-8">
+      {/* Fine architectural lines keep the light surface from feeling flat. */}
       <div
-        className="absolute inset-0 opacity-[0.035] pointer-events-none"
+        className="pointer-events-none absolute inset-0 opacity-60"
         style={{
-          backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='1'/%3E%3C/svg%3E")`,
-          backgroundRepeat: "repeat",
-          backgroundSize: "128px 128px",
+          backgroundImage:
+            "repeating-linear-gradient(115deg, transparent 0, transparent 72px, rgba(26,25,25,0.045) 72px, rgba(26,25,25,0.045) 73px), repeating-linear-gradient(25deg, transparent 0, transparent 118px, rgba(193,69,17,0.035) 118px, rgba(193,69,17,0.035) 119px)",
         }}
       />
 
-      {/* Brand glow — center left */}
-      <div className="absolute top-1/2 -left-20 -translate-y-1/2 w-[500px] h-[500px] bg-brand/[0.07] blur-[120px] rounded-full pointer-events-none" />
+      <div className="pointer-events-none absolute -left-32 top-1/3 h-[420px] w-[420px] -translate-y-1/2 rounded-full bg-brand/[0.07] blur-[110px]" />
 
       <div className="relative z-10 max-w-[1280px] mx-auto">
         {/* Header */}
@@ -153,29 +151,29 @@ export default function AIMWhyUs() {
                 Why Choose Us
               </span>
             </div>
-            <h2 className="text-title-xl font-bold text-white leading-tight">
+            <h2 className="text-title-xl font-bold leading-tight text-[#1a1919]">
               Why <span className="text-brand">Assetium</span>
               <br />
               Investment Managers?
             </h2>
           </div>
-          <p className="text-[.8rem] leading-relaxed text-white/45 max-w-sm md:text-right">
+          <p className="max-w-sm text-[.8rem] leading-relaxed text-[#1a1919]/55 md:text-right">
             In a market full of promises, we back everything with real assets,
             professional management, and full regulatory oversight.
           </p>
         </div>
 
         {/* Stats strip */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-px bg-white/[0.06] rounded-2xl overflow-hidden border border-white/[0.06] mb-14">
+        <div className="mb-14 grid grid-cols-2 gap-px overflow-hidden rounded-2xl border border-[#1a1919]/[0.08] bg-[#1a1919]/[0.07] md:grid-cols-4">
           {stats.map((s, i) => (
             <div
               key={i}
-              className="flex flex-col gap-1.5 px-6 py-5 bg-[#111110]"
+              className="flex flex-col gap-1.5 bg-[#f8f6f1]/90 px-6 py-5"
             >
-              <span className="text-[2.4rem] font-black text-white leading-none tracking-tight">
+              <span className="text-[2.4rem] font-black leading-none tracking-tight text-[#1a1919]">
                 {s.value}
               </span>
-              <span className="text-[10px] font-bold text-white/30 uppercase tracking-[0.2em]">
+              <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-[#1a1919]/45">
                 {s.label}
               </span>
             </div>
@@ -187,24 +185,24 @@ export default function AIMWhyUs() {
           {reasons.map((r, i) => (
             <div
               key={i}
-              className="group relative bg-white/[0.03] border border-white/[0.07] rounded-2xl p-7 flex flex-col gap-5 hover:bg-white/[0.06] hover:border-brand/25 transition-all duration-300 overflow-hidden"
+              className="group relative flex flex-col gap-5 overflow-hidden rounded-2xl border border-[#1a1919]/[0.08] bg-white/55 p-7 transition-all duration-300 hover:border-brand/30 hover:bg-white/85"
             >
               {/* Ghost number */}
-              <span className="absolute -bottom-3 -right-2 text-[5rem] font-black text-white/[0.03] leading-none select-none pointer-events-none">
+              <span className="pointer-events-none absolute -bottom-3 -right-2 select-none text-[5rem] font-black leading-none text-[#1a1919]/[0.045]">
                 {r.number}
               </span>
 
               {/* Icon */}
-              <div className="w-11 h-11 rounded-xl bg-brand/10 border border-brand/20 flex items-center justify-center text-brand group-hover:bg-brand group-hover:text-white group-hover:border-brand transition-all duration-300">
+              <div className="flex h-11 w-11 items-center justify-center rounded-xl border border-brand/20 bg-brand/10 text-brand transition-all duration-300 group-hover:border-brand group-hover:bg-brand group-hover:text-white">
                 {r.icon}
               </div>
 
               {/* Content */}
               <div className="flex flex-col gap-2">
-                <h3 className="text-[15px] font-bold text-white leading-snug group-hover:text-brand transition-colors duration-300">
+                <h3 className="text-[15px] font-bold leading-snug text-[#1a1919] transition-colors duration-300 group-hover:text-brand">
                   {r.title}
                 </h3>
-                <p className="text-[.8rem] leading-relaxed text-white/45">
+                <p className="text-[.8rem] leading-relaxed text-[#1a1919]/55">
                   {r.description}
                 </p>
               </div>
