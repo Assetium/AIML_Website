@@ -21,7 +21,7 @@ const commodities = [
     active: false,
   },
   {
-    emoji: "🫚",
+    icon: "/ginger.png",
     name: "Ginger",
     type: "Medium-Term",
     duration: "8–9 Months",
@@ -38,7 +38,7 @@ const commodities = [
     active: true,
   },
   {
-    emoji: "🍠",
+    icon: "/tumeric.png",
     name: "Turmeric",
     type: "Long-Term",
     duration: "10–12 Months",
@@ -103,7 +103,15 @@ export default function ATCCommoditiesCycles() {
                   : "text-[#1a1919]/35 hover:text-[#1a1919]/65"
               }`}
             >
-              <span>{tab.emoji}</span>
+              {tab.icon ? (
+                <img
+                  src={tab.icon}
+                  alt=""
+                  className="w-5 h-5 object-cover rounded-full"
+                />
+              ) : (
+                <span>{tab.emoji}</span>
+              )}
               <span>{tab.name}</span>
               {tab.active && (
                 <span className="w-1.5 h-1.5 rounded-full bg-brand animate-pulse" />
@@ -127,11 +135,27 @@ export default function ATCCommoditiesCycles() {
           >
             {/* Watermark */}
             <span className="absolute -bottom-6 -right-4 text-[8rem] opacity-[0.07] select-none pointer-events-none leading-none">
-              {c.emoji}
+              {c.icon ? (
+                <img
+                  src={c.icon}
+                  alt=""
+                  className="w-20 h-20 object-cover rounded-full"
+                />
+              ) : (
+                c.emoji
+              )}
             </span>
 
             <div className="flex flex-col gap-4">
-              <span className="text-5xl">{c.emoji}</span>
+              {c.icon ? (
+                <img
+                  src={c.icon}
+                  alt={c.name}
+                  className="w-12 h-12 object-cover rounded-full"
+                />
+              ) : (
+                <span className="text-5xl">{c.emoji}</span>
+              )}
               <div>
                 <h3 className="text-[32px] font-black text-[#1a1919] leading-none">
                   {c.name}

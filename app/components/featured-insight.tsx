@@ -11,7 +11,15 @@ import {
 } from "@/components/ui/carousel";
 import { MediaItem } from "@/lib/types";
 
-const FeaturedInsights = () => {
+interface FeaturedInsightsProps {
+  subsidiary?: string;
+  featuredOnly?: boolean;
+}
+
+const FeaturedInsights = ({
+  subsidiary,
+  featuredOnly = true,
+}: FeaturedInsightsProps) => {
   const [featuredMedia, setFeaturedMedia] = useState<MediaItem[]>([]);
   const [loading, setLoading] = useState<boolean>(true); // Loading state to show while fetching data
 
@@ -20,10 +28,11 @@ const FeaturedInsights = () => {
     const fetchData = async () => {
       try {
         await fetchAndUpdateMediaData(); // Fetch and update the MediaData array
-        const featured = MediaData.filter((item) => item.isFeatured).slice(
-          0,
-          10
-        );
+        const featured = MediaData.filter(
+          (item) =>
+            (!featuredOnly || item.isFeatured) &&
+            (!subsidiary || item.subsidiary === subsidiary)
+        ).slice(0, 10);
         setFeaturedMedia(featured); // Reverse the array before setting it to state
       } catch (error) {
         console.error("Error fetching media data:", error);
@@ -33,7 +42,7 @@ const FeaturedInsights = () => {
     };
 
     fetchData(); // Trigger the data fetch
-  }, []); // Empty dependency array ensures this runs only once on mount
+  }, [featuredOnly, subsidiary]);
 
   if (loading) {
     return (

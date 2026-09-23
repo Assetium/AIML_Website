@@ -1,3 +1,16 @@
+import {
+  BadgeCheck,
+  BarChart3,
+  CircleDollarSign,
+  LockKeyhole,
+  MapPin,
+  Scale,
+  ShoppingCart,
+  Sprout,
+  Truck,
+  Wheat,
+} from "lucide-react";
+
 const products = [
   {
     tag: "Farmer Network",
@@ -6,11 +19,11 @@ const products = [
     description:
       "A dedicated platform connecting farmers with resources, market insights, and agricultural innovations — from smallholders to large-scale operators.",
     features: [
-      { icon: "🌱", label: "Farmer-to-Farmer Networking" },
-      { icon: "🛒", label: "Agri-Input Access" },
-      { icon: "📊", label: "Market Intelligence" },
-      { icon: "💰", label: "Seamless Produce Sales" },
-      { icon: "📍", label: "Real-Time Tracking" },
+      { icon: Sprout, label: "Farmer-to-Farmer Networking" },
+      { icon: ShoppingCart, label: "Agri-Input Access" },
+      { icon: BarChart3, label: "Market Intelligence" },
+      { icon: CircleDollarSign, label: "Seamless Produce Sales" },
+      { icon: MapPin, label: "Real-Time Tracking" },
     ],
     cta: "Join the Community",
     href: "#",
@@ -23,11 +36,11 @@ const products = [
     description:
       "A digital marketplace connecting investors and farmers in a seamless, profitable, and transparent way — simplifying agro-commodity investments with fair trade and efficient logistics.",
     features: [
-      { icon: "✅", label: "Verified Farmer Listings" },
-      { icon: "⚖️", label: "Fair Trade & Price Stability" },
-      { icon: "🚚", label: "Efficient Logistics" },
-      { icon: "🔒", label: "Secure Transactions" },
-      { icon: "🌾", label: "Direct Farm Access" },
+      { icon: BadgeCheck, label: "Verified Farmer Listings" },
+      { icon: Scale, label: "Fair Trade & Price Stability" },
+      { icon: Truck, label: "Efficient Logistics" },
+      { icon: LockKeyhole, label: "Secure Transactions" },
+      { icon: Wheat, label: "Direct Farm Access" },
     ],
     cta: "Visit the Store",
     href: "#",
@@ -100,15 +113,22 @@ export default function OtherProducts() {
 
                   {/* Features */}
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
-                    {p.features.map((f, j) => (
-                      <div
-                        key={j}
-                        className="flex items-center gap-2.5 text-[.78rem] text-foreground/90"
-                      >
-                        <span className="text-base">{f.icon}</span>
-                        {f.label}
-                      </div>
-                    ))}
+                    {p.features.map((f, j) => {
+                      const FeatureIcon = f.icon;
+
+                      return (
+                        <div
+                          key={j}
+                          className="flex items-center gap-2.5 text-[.78rem] text-foreground/90"
+                        >
+                          <FeatureIcon
+                            className="w-4 h-4 text-brand flex-shrink-0"
+                            strokeWidth={1.8}
+                          />
+                          {f.label}
+                        </div>
+                      );
+                    })}
                   </div>
                 </div>
               </div>

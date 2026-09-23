@@ -7,7 +7,7 @@
 //   {
 //     id: "fixed",
 //     tag: "Capital Growth",
-//     name: "Fixed Investment Portfolio",
+//     name: "Assetium Discretionary Portfolio",
 //     shortDesc: "Short-term. Steady. Commodity-backed.",
 //     color: "#c14511",
 //     lightColor: "rgba(193,69,17,0.08)",
@@ -35,7 +35,7 @@
 //   {
 //     id: "kiddies",
 //     tag: "Future Planning",
-//     name: "Kiddies Investment Portfolio",
+//     name: "Assetium Non-Discretionary Portfolio",
 //     shortDesc: "Little steps. Big future. Start today.",
 //     color: "#0ea5e9",
 //     lightColor: "rgba(14,165,233,0.08)",
@@ -60,7 +60,7 @@
 //   {
 //     id: "halal",
 //     tag: "Shariah-Compliant",
-//     name: "Halal Investment Portfolio",
+//     name: "Assetium Ethical Portfolio",
 //     shortDesc: "Ethical. Transparent. Profitable.",
 //     color: "#10b981",
 //     lightColor: "rgba(16,185,129,0.08)",
@@ -329,84 +329,81 @@ import { useState } from "react";
 const products = [
   {
     id: "fixed",
-    tab: "Fixed Investment",
+    tab: "Discretionary Portfolio",
     badge: "Flexible",
     badgeColor: "#c14511",
-    name: "Assetium Fixed Investment Portfolio",
-    tagline: "Grow your money steadily. No stress, no guesswork.",
+    name: "Assetium Discretionary Portfolio",
+    tagline: "Competitive income and capital preservation, managed for you.",
     description:
-      "A carefully managed, commodity-backed investment portfolio designed to help you achieve short-term financial goals while preserving capital and maintaining liquidity. Our team of experts handles everything — you simply invest and earn.",
+      "A privately managed, Naira-denominated portfolio built for investors who want certainty, not guesswork. Your capital is actively managed across Nigerian Treasury Bills, FGN and corporate debt, and other approved securities.",
     details:
-      "Profits are compounded quarterly, semi-annually, or at maturity — giving you flexibility on when and how you receive your returns. Ideal for retail investors and medium net-worth individuals who want a smart, stable alternative to traditional savings.",
+      "A competitive rate is agreed upfront based on prevailing market conditions. Investment tenor is set to match your liquidity needs, with access to your portfolio through your relationship manager.",
     highlights: [
-      { label: "Minimum Investment", value: "₦50,000" },
-      { label: "Profit Payment", value: "Quarterly · Semi-Annual · Maturity" },
-      { label: "Investment Type", value: "Commodity-Backed" },
-      { label: "Target Investor", value: "Retail & Medium Net-Worth" },
+      { label: "Minimum Investment", value: "₦1,000,000" },
+      { label: "Minimum Holding", value: "91 Days" },
+      { label: "Average Maturity", value: "1 Year" },
+      { label: "Liquidation Payout", value: "Within 48 Hours" },
     ],
     features: [
-      "Attractive profit on commodity-backed investment",
-      "Flexible tenor aligned to your goals",
       "Capital preservation focus",
-      "Liquidity maintained throughout",
-      "Professionally managed end-to-end",
+      "Fixed, competitive return agreed at inception",
+      "Flexible tenor matched to your investment horizon",
+      "Actively managed by the Investment Management team",
+      "Research, due diligence, and Investment Committee oversight",
     ],
     color: "#16a34a",
     image: "/aiml/product/afipp.jpg",
   },
   {
     id: "kiddies",
-    tab: "Kiddies (Minivault)",
+    tab: "Non-Discretionary Portfolio",
     badge: "Long-Term",
     badgeColor: "#c14511",
-    name: "Assetium Kiddies Investment Portfolio",
-    tagline: "Little steps today. A strong financial future tomorrow.",
+    name: "Assetium Non-Discretionary Portfolio",
+    tagline: "A competitive return, managed by you.",
     description:
-      "Purpose-built for parents who want to give their children a head start. By investing in real, tangible commodities, the Minivault grows your child's savings while teaching them invaluable lessons about money, markets, and financial discipline.",
+      "A professional investment management solution tailored to your directives and objectives. AIML provides the expertise, research, and execution support you need while you stay in control.",
     details:
-      "Children don't just save — they learn. Through the ACML Kids Membership Club, young investors gain access to financial education, interactive workshops, and exclusive events that set them on the path to financial independence.",
+      "You remain responsible for investment decisions while our team supports you with market intelligence, portfolio construction, and disciplined execution across suitable instruments.",
     highlights: [
-      { label: "Minimum Tenor", value: "5 Years" },
-      { label: "Annual Withdrawal", value: "Up to 20% of balance" },
-      { label: "Fund Status", value: "Insured" },
-      { label: "Returns", value: "Competitive — reviewed periodically" },
+      { label: "Minimum Investment", value: "₦5,000,000" },
+      { label: "Minimum Holding", value: "91 Days" },
+      { label: "Currency", value: "NGN" },
+      { label: "Regulator", value: "SEC Approved" },
     ],
     features: [
-      "Financial goals: education, upkeep, entrepreneurship, wealth transfer",
-      "Up to 20% annual withdrawal flexibility",
-      "Fund is fully insured",
-      "Access to ACML Kids Membership Club",
-      "Financial education, workshops, and interactive sessions",
+      "Strategy tailored to your directives and objectives",
+      "Professional research and market intelligence",
+      "Execution support while you retain control",
+      "Portfolio decisions aligned with your investment horizon",
+      "SEC-approved investment management solution",
     ],
     color: "#0ea5e9",
     image: "/aiml/product/minivault.png",
   },
   {
     id: "halal",
-    tab: "Halal Portfolio",
+    tab: "Ethical Portfolio",
     badge: "Shariah-Compliant",
     badgeColor: "#c14511",
-    name: "Assetium Halal Investment Portfolio",
-    tagline: "Grow your wealth ethically. No compromise on returns.",
+    name: "Assetium Ethical Portfolio",
+    tagline: "Ethical investing shaped around your long-term objectives.",
     description:
-      "A short to medium-term, Shariah-compliant investment for individuals and businesses who want competitive returns without compromising on Islamic financial principles. Built on the Mudaraba (partnership) model — transparent, ethical, and real asset-backed.",
+      "A responsible investment option for individuals and institutions seeking ethical products and ESG-aligned strategies as part of a diversified portfolio.",
     details:
-      "Investors participate in a carefully selected basket of physical commodities, earning profits that are typically higher than returns on regular non-interest accounts. Liquidity and safety of funds are maintained throughout.",
+      "AIML combines rigorous research, risk-adjusted modelling, and asset allocation frameworks to build solutions that align investment decisions with long-term financial objectives.",
     highlights: [
-      { label: "Minimum Investment", value: "₦50,000" },
-      { label: "Flexible Tenor", value: "90 · 180 · 365 days" },
-      { label: "Redemption", value: "24 – 48 working hours" },
-      {
-        label: "Early Termination",
-        value: "Allowed (25% charge on accrued profit)",
-      },
+      { label: "Strategy", value: "Ethical and ESG-Aligned" },
+      { label: "Approach", value: "Diversified Portfolio Management" },
+      { label: "Asset Classes", value: "Equities, Fixed Income, FX, Alternatives" },
+      { label: "Mandate", value: "Individual and Institutional" },
     ],
     features: [
-      "Fully Shariah-compliant — Mudaraba principle",
-      "Physical commodity-backed basket",
-      "Competitive profits — higher than non-interest accounts",
-      "Flexible tenors: 90, 180, or 365 days",
-      "Early or part-termination allowed",
+      "Ethical products and responsible investment principles",
+      "ESG-aligned strategy options",
+      "Diversification across multiple asset classes",
+      "Risk-adjusted portfolio construction",
+      "Aligned with each client's long-term objectives",
     ],
     color: "#f59e0b",
     image: "/aiml/product/halal.png",
@@ -448,8 +445,10 @@ export default function AIMProducts() {
             </h2>
           </div>
           <p className="text-[.8rem] leading-relaxed text-[#1a1919]/50 max-w-sm md:text-right">
-            Three distinct portfolios designed for different goals, timelines,
-            and values. All commodity-backed. All professionally managed.
+            Three distinct portfolio strategies designed around different
+            objectives, investment horizons, and levels of client control.
+            Each is guided by research, disciplined risk management, and
+            professional portfolio management.
           </p>
         </div>
 
@@ -578,17 +577,19 @@ export default function AIMProducts() {
               <span className="text-[10px] font-bold text-[#1a1919]/35 uppercase tracking-wider mb-1">
                 Key Features
               </span>
-              {p.features.map((f, i) => (
-                <div key={i} className="flex items-start gap-2.5">
-                  <span
-                    className="w-1.5 h-1.5 rounded-full flex-shrink-0 mt-[5px]"
-                    style={{ backgroundColor: p.badgeColor }}
-                  />
-                  <span className="text-[.8rem] text-[#1a1919]/60 leading-relaxed">
-                    {f}
-                  </span>
-                </div>
-              ))}
+              <div className="grid grid-cols-1 md:grid-cols-2 md:grid-rows-3 md:grid-flow-col gap-x-8 gap-y-2">
+                {p.features.map((f, i) => (
+                  <div key={i} className="flex items-start gap-2.5">
+                    <span
+                      className="w-1.5 h-1.5 rounded-full flex-shrink-0 mt-[5px]"
+                      style={{ backgroundColor: p.badgeColor }}
+                    />
+                    <span className="text-[.8rem] text-[#1a1919]/60 leading-relaxed">
+                      {f}
+                    </span>
+                  </div>
+                ))}
+              </div>
             </div>
 
         

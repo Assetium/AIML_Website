@@ -130,31 +130,30 @@ export default function AIMHero() {
           <div className="hidden lg:flex flex-col gap-3">
             {[
               {
-                name: "Fixed Investment Portfolio",
-                risk: "Low Risk",
+                name: "Assetium Discretionary Portfolio",
+                risk: "Capital Preservation",
                 riskColor: "text-emerald-400",
                 riskBg: "bg-emerald-400/10 border-emerald-400/20",
-                tenor: "90 · 180 · 365 days",
-                highlight: "Quarterly, semi-annual or maturity profit payment",
+                tenor: "91 days minimum holding",
+                highlight: "Actively managed with a competitive agreed return",
                 dot: "bg-emerald-400",
               },
               {
-                name: "Kiddies Investment Portfolio",
-                risk: "Low – Medium",
+                name: "Assetium Non-Discretionary Portfolio",
+                risk: "Client-Directed",
                 riskColor: "text-sky-400",
                 riskBg: "bg-sky-400/10 border-sky-400/20",
-                tenor: "5 years minimum",
-                highlight:
-                  "Secure your child's future. Up to 20% annual withdrawal.",
+                tenor: "91 days minimum holding",
+                highlight: "Research and execution support while you stay in control",
                 dot: "bg-sky-400",
               },
               {
-                name: "Halal Investment Portfolio",
-                risk: "Shariah-Compliant",
+                name: "Assetium Ethical Portfolio",
+                risk: "Responsible Investing",
                 riskColor: "text-amber-400",
                 riskBg: "bg-amber-400/10 border-amber-400/20",
-                tenor: "90 · 180 · 365 days",
-                highlight: "Mudaraba-based. Ethical. Competitive returns.",
+                tenor: "Ethical and ESG-aligned strategies",
+                highlight: "Diversified solutions built around long-term objectives",
                 dot: "bg-amber-400",
               },
             ].map((p, i) => (

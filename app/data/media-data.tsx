@@ -16,6 +16,7 @@ interface FetchedItem {
   date: string; // Use Date if your application parses it
   headerImage: string;
   author: string;
+  subsidiary?: string;
   contentOne: string;
   contentTwo: string | null;
   additionalImageOne: string | null;
@@ -37,6 +38,7 @@ export const fetchAndUpdateMediaData = async () => {
         headerImage: item.headerImage,
         category: item.category,
         title: item.title,
+        subsidiary: item.subsidiary,
         contentOne: item.contentOne,
         isFeatured: item.isFeatured,
         author: item.author,

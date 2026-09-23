@@ -125,7 +125,11 @@ export default function ACMLHero() {
                 href="#"
                 className="group flex items-center gap-3 bg-brand/15 border border-brand/30 hover:bg-brand/25 transition-colors duration-200 px-4 py-3 rounded-xl"
               >
-                <span className="text-xl">🫚</span>
+                <img
+                  src="/ginger.png"
+                  alt="Ginger"
+                  className="w-6 h-6 object-cover rounded-full"
+                />
                 <div className="flex flex-col">
                   <span className="text-[14px] font-bold text-[#1a1919] leading-none">
                     Ginger
@@ -140,13 +144,25 @@ export default function ACMLHero() {
               {/* Coming soon */}
               {[
                 { emoji: "🌽", label: "Maize", type: "Short-Term" },
-                { emoji: "🟡", label: "Turmeric", type: "Long-Term" },
+                {
+                  icon: "/tumeric.png",
+                  label: "Turmeric",
+                  type: "Long-Term",
+                },
               ].map((item, i) => (
                 <div
                   key={i}
                   className="flex items-center gap-3 bg-[#1a1919]/[0.04] border border-[#1a1919]/[0.07] px-4 py-3 rounded-xl opacity-80"
                 >
-                  <span className="text-xl">{item.emoji}</span>
+                  {item.icon ? (
+                    <img
+                      src={item.icon}
+                      alt={item.label}
+                      className="w-6 h-6 object-cover rounded-full"
+                    />
+                  ) : (
+                    <span className="text-xl">{item.emoji}</span>
+                  )}
                   <div className="flex flex-col">
                     <span className="text-[14px] font-bold text-[#1a1919] leading-none">
                       {item.label}
@@ -155,9 +171,6 @@ export default function ACMLHero() {
                       {item.type}
                     </span>
                   </div>
-                  <span className="text-[9px] font-bold text-amber-400 bg-amber-400/10 border border-amber-400/20 px-1.5 py-0.5 rounded-full ml-1 uppercase tracking-wide">
-                    Soon
-                  </span>
                 </div>
               ))}
             </div>

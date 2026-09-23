@@ -83,6 +83,7 @@ export type MediaItem = {
   headerImage: string;
   category: string;
   title: string;
+  subsidiary?: string;
   isFeatured?: boolean;
   contentOne: string;
   author?: string;

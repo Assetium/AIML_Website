@@ -26,7 +26,7 @@ const tranches = [
       },
       {
         name: "Turmeric",
-        emoji: "🟡",
+        icon: "/tumeric.png",
         status: "completed",
         summary:
           "Turmeric completed as the long-term anchor of Tranche 1. Spanning the full calendar window, it delivered on its promise as a stable, high-demand commodity with reliable off-take across food, wellness, and cosmetic markets.",
@@ -63,7 +63,7 @@ const tranches = [
       },
       {
         name: "Turmeric",
-        emoji: "🟡",
+        icon: "/tumeric.png",
         status: "soon",
         summary:
           "The Turmeric cycle within Tranche 2 is yet to open. It will follow the Ginger cycle and will run as the long-term portfolio anchor for this tranche. Members will be notified ahead of the opening.",
@@ -215,7 +215,15 @@ export default function ATCTrancheHistory() {
               <div className="flex items-center gap-2">
                 {tranche.commodities.map((c, i) => (
                   <span key={i} className="text-xl">
-                    {c.emoji}
+                    {c.icon ? (
+                      <img
+                        src={c.icon}
+                        alt={c.name}
+                        className="w-5 h-5 object-cover rounded-full"
+                      />
+                    ) : (
+                      c.emoji
+                    )}
                   </span>
                 ))}
                 <h3 className="text-[15px] font-bold text-[#1a1919] ml-1">
@@ -249,7 +257,15 @@ export default function ATCTrancheHistory() {
                           : "bg-transparent border-transparent text-[#1a1919]/40 hover:text-[#1a1919]/70"
                       }`}
                     >
-                      <span>{c.emoji}</span>
+                      {c.icon ? (
+                        <img
+                          src={c.icon}
+                          alt={c.name}
+                          className="w-5 h-5 object-cover rounded-full"
+                        />
+                      ) : (
+                        <span>{c.emoji}</span>
+                      )}
                       <span>{c.name}</span>
                       <span className={`w-1.5 h-1.5 rounded-full ${cs.dot}`} />
                     </button>
@@ -332,9 +348,17 @@ export default function ATCTrancheHistory() {
                   </>
                 ) : (
                   <div className="flex-1 flex flex-col items-center justify-center rounded-xl border border-dashed border-black/[0.08] bg-black/[0.02] py-12 gap-3">
-                    <span className="text-4xl opacity-30">
-                      {commodity.emoji}
-                    </span>
+                    {commodity.icon ? (
+                      <img
+                        src={commodity.icon}
+                        alt={commodity.name}
+                        className="w-12 h-12 object-cover rounded-full opacity-30"
+                      />
+                    ) : (
+                      <span className="text-4xl opacity-30">
+                        {commodity.emoji}
+                      </span>
+                    )}
                     <p className="text-[.8rem] text-[#1a1919]/35 text-center max-w-[200px]">
                       Field footage will be available once this cycle opens.
                     </p>
